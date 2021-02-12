@@ -1,8 +1,13 @@
 import React from 'react'
 
+// components
+import { Content } from 'components/atoms/Content'
+
 const NotFound = () => {
     return (
-        <h1>not found</h1>
+        <Content backgroundImg='https://source.unsplash.com/1600x900/?nature'>
+            jk
+        </Content>
     )
 }
 

@@ -6,7 +6,6 @@ const Form = styled.form`
     max-width: 480px;
     max-height: 480px;
     background: rgb(255, 255, 255, 0.75);
-    border-radius: 32px;
     padding: 32px;
     margin-top: 5%;
     display: flex;
@@ -17,7 +16,7 @@ const Form = styled.form`
     position: absolute;
     top: 50%;
     transform: translateY(-75%);
-    
+
     h1 {
         font-family: 'Lato', sans-serif;
         font-weight: 500;
@@ -64,7 +63,6 @@ const Register = styled.button`
     width: 75%;
     height: 80px;
     background: rgb(255, 255, 255, 0.5);
-    border-radius: 0 0 32px 32px; 
     position: absolute;
     bottom: -88px;
     border: none;

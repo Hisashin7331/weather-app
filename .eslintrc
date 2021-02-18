@@ -1,5 +1,10 @@
 {
-    "extends": ["airbnb", "prettier", "prettier/react", "plugin:react/recommended"],
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react",
+        "plugin:react/recommended"
+    ],
     "env": {
         "jest": true
     },
@@ -12,27 +17,20 @@
         "no-console": 1,
         "react/jsx-filename-extension": [
             1,
-             {
+            {
                 "extensions": [".js"]
             }
         ],
-        "jsx-a11y/label-has-associated-control": 0
+        "jsx-a11y/label-has-associated-control": 0,
+        "react/jsx-props-no-spreading": 0
     },
     "parser": "babel-eslint",
     "settings": {
         "import/resolver": {
             "node": {
-                "extensions": [
-                    ".js",
-                    ".jsx", 
-                    ".ts", 
-                    ".tsx"
-                ],
-                "paths": [
-                    "src"
-                ]
+                "extensions": [".js", ".jsx", ".ts", ".tsx"],
+                "paths": ["src"]
             }
         }
     }
 }
-  

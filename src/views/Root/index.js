@@ -1,7 +1,12 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from 'react-router-dom'
 import { routes } from 'routes'
-
+import { Provider } from 'react-redux'
+import store from 'store'
 
 // views
 import Home from 'views/Home'
@@ -14,22 +19,39 @@ import GlobalStyle from 'themes/GlobalStyle'
 import { Page, App, BGImage } from './styles'
 
 const Root = () => {
-  return (
-    <Router>
-      <GlobalStyle />
-      <Page>
-        <BGImage />
-        <App>
-          <Switch>
-            <Route exact path={routes.homepage} component={Home} />
-            <Route exact path={routes.login} component={Login} />
-            <Route exact path={routes.details} component={Details} />
-            <Route path={routes.notfound} component={NotFound} />
-           </Switch>
-        </App>
-      </Page>
-    </Router>
-  )
+    return (
+        <Provider store={store}>
+            <Router>
+                <GlobalStyle />
+                <Page>
+                    <BGImage />
+                    <App>
+                        <Switch>
+                            <Route
+                                exact
+                                path={routes.homepage}
+                                component={Home}
+                            />
+                            <Route
+                                exact
+                                path={routes.login}
+                                component={Login}
+                            />
+                            <Route
+                                exact
+                                path={routes.details}
+                                component={Details}
+                            />
+                            <Route
+                                path={routes.notfound}
+                                component={NotFound}
+                            />
+                        </Switch>
+                    </App>
+                </Page>
+            </Router>
+        </Provider>
+    )
 }
 
 export default Root

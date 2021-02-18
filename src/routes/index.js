@@ -3,5 +3,5 @@ export const routes = {
     homepage: '/',
     login: '/login',
     details: '/details',
-    notfound: '/*'
+    notfound: '/*',
 }

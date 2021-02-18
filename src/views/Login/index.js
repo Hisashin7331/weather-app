@@ -13,13 +13,13 @@ import lock from 'assets/login/lock.svg'
 import { Form, Input, Submit, Register } from './styles'
 
 const Login = () => {
-    const [ isLogin, switchLogin ] = useState(true)
-    const [ login, updateLogin ] = useState('')
-    const [ password, updatePassword ] = useState('')
+    const [isLogin, switchLogin] = useState(true)
+    const [login, updateLogin] = useState('')
+    const [password, updatePassword] = useState('')
 
-    const submitForm = (e) => {
+    const submitForm = e => {
         e.preventDefault()
-        if(isLogin) {
+        if (isLogin) {
             console.log('login user')
         } else {
             console.log('register user')
@@ -28,27 +28,40 @@ const Login = () => {
 
     return (
         <Content left flex>
-            <Form >
+            <Form>
                 <h1>{isLogin ? 'LOGIN' : 'REGISTER'}</h1>
                 <Input>
                     <span>
                         <img src={person} alt='login icon' />
                     </span>
-                    <input type='text' placeholder='Login' autoComplete='off' value={login} onChange={(e) => updateLogin(e.target.value)} />
+                    <input
+                        type='text'
+                        placeholder='Login'
+                        autoComplete='off'
+                        value={login}
+                        onChange={e => updateLogin(e.target.value)}
+                    />
                 </Input>
                 <Input>
                     <span>
                         <img src={lock} alt='login icon' />
                     </span>
-                    <input type='password' placeholder='Password'  value={password} onChange={(e) => updatePassword(e.target.value)} />
+                    <input
+                        type='password'
+                        placeholder='Password'
+                        value={password}
+                        onChange={e => updatePassword(e.target.value)}
+                    />
                 </Input>
-                <Submit onClick={(e) => submitForm(e)}>
+                <Submit onClick={e => submitForm(e)}>
                     {isLogin ? 'LOGIN' : 'REGISTER'}
                 </Submit>
-                <Register onClick={(e) => {
-                    e.preventDefault()
-                    switchLogin(!isLogin)
-                }}>
+                <Register
+                    onClick={e => {
+                        e.preventDefault()
+                        switchLogin(!isLogin)
+                    }}
+                >
                     {isLogin ? 'REGISTER' : 'LOGIN'}
                 </Register>
             </Form>

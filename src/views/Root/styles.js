@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import background from 'assets/background.jpg'
-import rain from 'assets/weather/rain.webp'
 
 const Page = styled.div`
     width: 100vw;
@@ -30,9 +29,6 @@ const App = styled.div`
     height: ${props => (props.path === '/login' ? '40%' : '60%')};
     display: flex;
     box-shadow: 0 0 32px 1px rgb(0, 0, 0, 0.5);
-    /* background-image: url(${rain});
-    background-size: auto 100%;
-    background-color: rgb(0, 0, 0, 0.3); */
     background: #48484a;
     @media (max-height: 1080px) {
         max-width: calc(0.5 * 1920px);

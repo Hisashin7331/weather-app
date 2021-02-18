@@ -14,6 +14,7 @@ import {
 } from './styles'
 
 const Informations = ({
+    error,
     temp,
     tempMin,
     tempMax,
@@ -39,7 +40,7 @@ const Informations = ({
                     </City>
                     <Temperature>{temp} &#x00BA;C</Temperature>
                 </div>
-                <Icon src={icon} alt='Weather icon' />
+                {!error && <Icon src={icon} alt='Weather icon' />}
             </Section>
             <Section>
                 <More>
@@ -58,21 +59,27 @@ const Informations = ({
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ currentWeather }) => {
+    if (Object.keys(currentWeather).length !== 0) {
+        return {
+            temp: Math.round(currentWeather.main.temp),
+            tempMin: Math.round(currentWeather.main.temp_min),
+            tempMax: Math.round(currentWeather.main.temp_max),
+            city: currentWeather.name,
+            country: currentWeather.sys.country,
+            weatherName: currentWeather.weather[0].main,
+            icon: `http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`,
+        }
+    }
     return {
-        temp: Math.round(state.main.temp),
-        tempMin: Math.round(state.main.temp_min),
-        tempMax: Math.round(state.main.temp_max),
-        city: state.name,
-        country: state.sys.country,
-        weatherName: state.weather[0].main,
-        icon: `http://openweathermap.org/img/wn/${state.weather[0].icon}@2x.png`,
+        error: true,
     }
 }
 
 export default connect(mapStateToProps)(Informations)
 
 Informations.propTypes = {
+    error: propTypes.bool,
     temp: propTypes.number,
     tempMin: propTypes.number,
     tempMax: propTypes.number,
@@ -83,9 +90,10 @@ Informations.propTypes = {
 }
 
 Informations.defaultProps = {
-    temp: 'X',
-    tempMin: 'X',
-    tempMax: 'X',
+    error: false,
+    temp: 0,
+    tempMin: 0,
+    tempMax: 0,
     city: 'City not set',
     country: '',
     weatherName: '',

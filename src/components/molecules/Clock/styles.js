@@ -21,6 +21,9 @@ const Styled = styled.h1`
         right: 64px;
         top: 64px;
     }
+    @media (max-width: 1200px) {
+        display: none;
+    }
 `
 
 export { Styled }

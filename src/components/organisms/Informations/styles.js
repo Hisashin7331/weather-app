@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Styled = styled.div`
     width: 100%;
@@ -7,6 +7,11 @@ const Styled = styled.div`
     align-items: center;
     font-family: 'Roboto', sans-serif;
     color: white;
+    ${({ error }) =>
+        error &&
+        css`
+            margin-top: 32px;
+        `}
 `
 
 const Current = styled.div`

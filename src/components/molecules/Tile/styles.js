@@ -16,10 +16,29 @@ const Styled = styled.button`
     &:focus {
         outline: 0;
     }
+    @media (max-width: 719px) {
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        grid-template-rows: 100%;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        h3 {
+            justify-self: flex-start;
+        }
+        h1 {
+            justify-self: flex-end;
+        }
+    }
 `
 
 const Icon = styled.img`
-    width: 70%;
+    width: 100%;
+    @media (max-width: 721px) {
+        width: auto;
+        height: 200%;
+    }
 `
 
 export { Styled, Icon }

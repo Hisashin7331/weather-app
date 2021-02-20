@@ -11,6 +11,11 @@ const Container = styled.div`
     grid-template-rows: repeat(auto-fit, 33%);
     align-items: center;
     justify-items: center;
+    @media (max-width: 719px) {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(auto-fit, 20%);
+        height: 50%;
+    }
 `
 
 export { Container }

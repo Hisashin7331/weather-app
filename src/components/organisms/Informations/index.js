@@ -24,7 +24,7 @@ const Informations = ({
     icon,
 }) => {
     return (
-        <Styled>
+        <Styled error={error}>
             <Section icon>
                 <div>
                     <City>

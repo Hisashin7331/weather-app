@@ -22,9 +22,13 @@ const BGImage = styled.div`
     left: -5%;
     top: -5%;
     z-index: -1;
+    @media (max-width: 1200px) {
+        display: none;
+    }
 `
 
 const App = styled.div`
+    overflow: hidden;
     width: ${props => (props.path === '/login' ? '40%' : '50%')};
     height: ${props => (props.path === '/login' ? '40%' : '60%')};
     display: flex;
@@ -38,6 +42,10 @@ const App = styled.div`
     }
     @media (min-height: 1441px) and (max-height: 2160px) {
         max-width: calc(0.5 * 3840px);
+    }
+    @media (max-width: 1200px) {
+        width: 100vw;
+        height: 100%;
     }
 `
 

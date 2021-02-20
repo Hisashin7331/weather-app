@@ -19,8 +19,8 @@ import { Page, App, BGImage } from './styles'
 const Root = () => {
     return (
         <Provider store={store}>
+            <GlobalStyle />
             <Router>
-                <GlobalStyle />
                 <Page>
                     <BGImage />
                     <App>
